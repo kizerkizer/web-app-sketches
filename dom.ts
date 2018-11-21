@@ -54,8 +54,6 @@ const select = (selector, all = false): Element | Element[] => {
     return all ? _selectAllElements(selector) : _selectFirstElement(selector);
 };
 
-
-
 export {
     select,
     create

@@ -20,7 +20,7 @@ let request = {
     })
 };
 
-const convertObjectToQueryString = (object) => Object.keys(object).reduce(
+const convertObjectToQueryStringSimple = (object, path: string = '') => Object.keys(object).reduce(
     (previous, current, i) => {
         let prefix = i === 0 ? '' : '&';
         return previous + `${prefix}${current}=${object[current]}` ;
@@ -36,7 +36,7 @@ const paint = (object: any, fn: Function, deep: boolean = false) => {
     return object;
 };
 
-console.log(convertObjectToQueryString({
+console.log(convertObjectToQueryStringSimple({
     foo: 'bar',
     red: [1, 2, 3],
     exists: false
